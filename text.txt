@@ -1,0 +1,97 @@
+# API Documentation
+
+## Register User
+- **Endpoint**: `POST /auth/register`
+- **URL**: 'http://127.0.0.1:5000/register`
+- **Request Body**:
+  ```json
+  {
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "password": "securepassword"
+  }
+
+
+
+
+
+##LOGIN User
+Endpoint: POST /auth/login
+URL: http://127.0.0.1:5000/login
+Request Body:
+json
+Copy code
+{
+  "username": "testuser",
+  "password": "securepassword"
+}
+
+  
+
+
+##Create Task
+Endpoint: POST /api/tasks
+URL: http://127.0.0.1:5000/tasks
+Request Body:
+json
+Copy code
+{
+  "user_id": 1,
+  "title": "Test Task",
+  "description": "This is a test task.",
+  "due_date": "2024-08-01",
+  "priority": "High",
+  "status": "Pending"
+}
+
+
+
+
+
+
+##Update Task
+Endpoint: PUT /api/tasks/<task_id>
+URL: http://127.0.0.1:5000/tasks/task_id
+Request Body:
+json
+Copy code
+{
+  "title": "Updated Task Title",
+  "description": "Updated description.",
+  "due_date": "2024-08-10",
+  "priority": "Medium",
+  "status": "In Progress"
+}
+
+
+
+
+
+
+
+
+
+
+##List All Tasks
+Endpoint: GET /api/tasks
+URL: http://127.0.0.1:5000/tasks
+Response:
+Status: 200 OK
+Body:
+json
+Copy code
+{
+  "tasks": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "title": "Test Task",
+      "description": "This is a test task.",
+      "due_date": "2024-08-01",
+      "priority": "High",
+      "status": "Pending",
+      "created_at": "2024-07-25T12:00:00",
+      "updated_at": "2024-07-25T12:00:00"
+    }
+  ]
+}
