@@ -75,7 +75,7 @@ def get_tasks():
         cur.close()
         conn.close()
 
-@task_bp.route('/tasks/<int:task_id>', methods=['PUT'])
+@task_bp.route('/update//<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     data = request.get_json()
     title = data.get('title')
