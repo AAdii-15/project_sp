@@ -75,7 +75,7 @@ def get_tasks():
         cur.close()
         conn.close()
 
-@task_bp.route('/update//<int:task_id>', methods=['PUT'])
+@task_bp.route('/update//<int:task_id>', methods=['POST'])
 def update_task(task_id):
     data = request.get_json()
     title = data.get('title')
@@ -113,7 +113,7 @@ def update_task(task_id):
         cur.close()
         conn.close()
 
-@task_bp.route('/tasks/<int:task_id>', methods=['DELETE'])
+@task_bp.route('/delete/<int:task_id>', methods=['POST'])
 def delete_task(task_id):
     conn = get_db_connection()
     if not conn:
